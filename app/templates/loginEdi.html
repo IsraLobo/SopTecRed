@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+{% load static %}
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Edilar</title>
+    <link rel="stylesheet" href="{% static "app/css/log.css" %}" />
+</head>
+<body>
+    {% if alert %}
+    <script>alert("{{ alert }}");</script>
+    {% endif %}
+    <div class="body"></div>
+	<div class="grad"></div>
+	<div class="header">
+        <img src="{% static "app/images/edilar01.png" %}" />
+	</div>
+	<br>
+	<div class="login">
+        <form action="/acceso/" method="post">
+            {% csrf_token %}
+            <input type="text" placeholder="username" name="username" required="required"><br>
+            <input type="password" placeholder="password" name="password" required="required"><br>
+            <input type="submit" value="Entrar">
+        </form>
+	</div>
+</body>
+</html>
